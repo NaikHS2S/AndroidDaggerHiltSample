@@ -15,8 +15,8 @@ import javax.inject.Named
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    @Named("String1")
-    lateinit var testString: String
+    @Named("String2")
+    lateinit var testString2: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
-        Log.d("MainActivity", "Test String from MainActivity: $testString")
+
+        Log.d(MainActivity::class.simpleName, "Test String: $testString2")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
