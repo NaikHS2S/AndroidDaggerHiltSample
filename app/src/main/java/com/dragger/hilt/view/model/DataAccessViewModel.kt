@@ -7,5 +7,5 @@ import com.dragger.hilt.module.MySecondClass
 
 import javax.inject.Inject
 
-class YourViewModel @Inject constructor(@MyFirstClass private val firstClass: DataInterface, @MySecondClass private val secondClass: DataInterface
+class DataAccessViewModel @Inject constructor(@MyFirstClass private val firstClass: DataInterface, @MySecondClass private val secondClass: DataInterface
 ) : ViewModel()
