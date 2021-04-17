@@ -7,6 +7,9 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import com.dragger.hilt.data.UserData
+import com.dragger.hilt.view.model.MyViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import javax.inject.Named
@@ -18,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     @Named("String2")
     lateinit var testString2: String
 
+    private val myViewModel: MyViewModel by viewModels()
+
+    @Inject lateinit var userData: UserData
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,7 +35,8 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        Log.d(MainActivity::class.simpleName, "Test String: $testString2")
+        Log.d(MainActivity::class.simpleName, "Test String: $testString2 and ${userData.name}")
+        myViewModel
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

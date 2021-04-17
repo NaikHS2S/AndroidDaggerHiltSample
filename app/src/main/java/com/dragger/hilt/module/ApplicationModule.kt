@@ -7,7 +7,6 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object ApplicationModule {
@@ -16,5 +15,10 @@ object ApplicationModule {
     @Provides
     @Named("String1")
     fun provideTestString1() = "This is a sample application"
+
+    @Singleton
+    @Provides
+    @Named("userName")
+    fun provideUserName() = "name"
 
 }
